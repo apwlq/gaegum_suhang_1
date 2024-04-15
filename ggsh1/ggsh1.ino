@@ -12,17 +12,19 @@ void loop() {
   int b = digitalRead(12);
   int is = 0;
   
-  Serial.println(a);
-  Serial.println(b);
-  Serial.println();
-
+  Serial.print(a);
+  Serial.print(" ");
+  Serial.print(b);
+  Serial.print(" ");
+  
   if (a > 512 && b == 0) {
     is = 1;
-    Serial.println("ONO");
+    Serial.print("ON");
   } else {
     is = 0;
-    Serial.println("OFF");
+    Serial.print("OFF");
   }
+  Serial.println();
 
   if (is == 1) {
     digitalWrite(8, LOW);
@@ -37,7 +39,6 @@ void loop() {
     digitalWrite(5, LOW);
     digitalWrite(4, LOW);
   }
-  Serial.println();
 
   delay(1000);
 
